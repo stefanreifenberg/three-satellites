@@ -1,0 +1,11 @@
+Model Information:
+* title:	Simple Satellite Low Poly Free
+* source:	https://sketchfab.com/3d-models/simple-satellite-low-poly-free-f23b484cda664f1cb91b4f62ea5ef8bf
+* author:	DjalalxJay (https://sketchfab.com/djalalxjay)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Simple Satellite Low Poly Free" (https://sketchfab.com/3d-models/simple-satellite-low-poly-free-f23b484cda664f1cb91b4f62ea5ef8bf) by DjalalxJay (https://sketchfab.com/djalalxjay) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

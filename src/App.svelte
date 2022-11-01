@@ -7,16 +7,18 @@
   import LeoSatellites from './lib/LeoSatellites.svelte'
   import MeoSatellites from './lib/MeoSatellites.svelte';
   import { geo_orbit, leo_orbit, meo_orbit } from './data/DataStore.js'
+  import SatelliteModel from './lib/SatelliteModel.svelte';
 
 </script>
 
 <div class="canvas-wrapper">
   <Canvas>
-      <Environment
+      <SatelliteModel />
+      <!-- <Environment
         path = './cube_map/'
         files= {['px.png', 'nx.png', 'py.png', 'ny.png', 'pz.png', 'nz.png']}
         isBackground={true}
-      />
+      /> -->
       <Earth />
 
       <PerspectiveCamera fov={55} position={{ z: -20 }}>
@@ -24,11 +26,11 @@
       </PerspectiveCamera>
       <DirectionalLight position={{ x: 1, y: 1, z: 1 }} color={0xffffff} intensity={0.6} />
 
-     {#if $geo_orbit.length}
+     <!-- {#if $geo_orbit.length}
       {#each $geo_orbit as _, i}
         <GeoSatellites />
         {/each}
-      {/if}
+      {/if} -->
 
        {#if $leo_orbit.length}
       {#each $leo_orbit as _, i}
@@ -36,11 +38,11 @@
         {/each}
       {/if}
 
-      {#if $meo_orbit.length}
+     <!--  {#if $meo_orbit.length}
       {#each $meo_orbit as _, i}
         <MeoSatellites />
         {/each}
-      {/if}
+      {/if} -->
 
     />
   </Canvas>
