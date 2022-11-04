@@ -3,7 +3,7 @@
     import { BoxGeometry, MeshBasicMaterial } from 'three'
 
     // create orbit position around earth
-    const radius = 8
+    const radius = 125
     const theta = Math.random() * Math.PI * 2
     const phi = Math.acos(Math.random() * 2 - 1)
     const x = radius * Math.sin(phi) * Math.cos(theta)
@@ -25,7 +25,7 @@
   <Mesh
     interactive on:pointermove={onPointerMove}
     position={orbit_position}
-    geometry={new BoxGeometry(1, 1, 1)}
+    geometry={new BoxGeometry(20, 20, 20)}
     material={new MeshBasicMaterial({ color: "red", wireframe: false })}
     scale={0.05}
   />

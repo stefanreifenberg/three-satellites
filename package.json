@@ -17,6 +17,13 @@
     "@threlte/core": "^4.3.2",
     "@threlte/extras": "^4.4.1",
     "d3": "^7.6.1",
+    "globe.gl": "^2.26.6",
+    "i": "^0.3.7",
+    "npm": "^8.19.2",
+    "sass": "^1.55.0",
+    "svelte-inview": "^3.0.1",
+    "svelte-preprocess": "^4.10.7",
+    "svelte-rough-notation": "^0.1.4",
     "three": "^0.145.0",
     "three-globe": "^2.24.8"
   }
