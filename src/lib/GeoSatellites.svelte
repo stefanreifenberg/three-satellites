@@ -1,33 +1,54 @@
 <script>
-    import { Mesh } from '@threlte/core'
-    import { BoxGeometry, MeshBasicMaterial } from 'three'
+    import {
+		SphereGeometry,
+		MeshBasicMaterial,
+		InstancedMesh,
+		Matrix4,
+		Vector3,
+	} from 'three';
+	import { randInt, randFloat } from 'three/src/math/MathUtils';
+	import { MeshInstance, useFrame } from '@threlte/core';
+  import { geo_orbit } from '../data/DataStore.js'
 
-    // place satellites in a cylinder orbit around earth
-    const radius = 100
-    const theta = Math.random() * Math.PI * 2
-    const phi = Math.acos(Math.random() * 2 - 1)
-    const x = radius * Math.sin(phi) * Math.cos(theta)
-    const y = radius * Math.sin(phi) * Math.sin(theta)
-    const z = radius * Math.cos(phi)
+  let count = $geo_orbit.length;
+	let innerRadius = 390;
+	let outerRadius = 400;
+  let rotation = 0.0005;
 
-    const orbit_position = {
-        x: x,
-        y: y,
-        z: z
+  useFrame(
+    () => {
+      rotation += 0.0001;
     }
+  )
 
-    
+  const vec3OnSphere = (range) => {
+		const length = randInt(range.min, range.max)
+		return new Vector3(
+			randFloat(-Math.PI, Math.PI),
+			randFloat(-0.1, 0.1),
+			randFloat(-Math.PI, Math.PI)
+		).clampLength(length, length);
+	}
+	
+	const geometry = new SphereGeometry(0.8);
+	const material = new MeshBasicMaterial({color: 'green'});
+	
+	let instMesh;
+	function initMesh(c, r) {
+		instMesh = new InstancedMesh(geometry, material, c)
+		const matrix = new Matrix4();
+		for (let i = 0; i < instMesh.count; i++) {
+			matrix.setPosition(vec3OnSphere(r));
+			instMesh.setMatrixAt(i, matrix);
+		}
+	}
+	
+	$: range = {min: innerRadius, max: outerRadius}
+	$: initMesh(count, range);
 
-    const onPointerMove = (e) => {
-        console.log(e.detail)
-    }
+   
 
   </script>
+
+<MeshInstance mesh={instMesh} rotation={{y: rotation}}/>
   
-  <Mesh
-    interactive on:pointermove={onPointerMove}
-    position={orbit_position}
-    geometry={new BoxGeometry(20, 20, 20)}
-    material={new MeshBasicMaterial({ wireframe: false })}
-    scale={0.2}
-  />

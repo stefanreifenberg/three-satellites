@@ -65,13 +65,19 @@
 
 <style lang="scss">
 
-	.canvas-wrapper {
-		width: 100vw;
-		height: 100vh;
-    position: sticky;
-    flex: 1 1 60%;
-    top: 0;
-	}
+	// .canvas-wrapper {
+	// 	width: 100vw;
+	// 	height: 100vh;
+  //   position: sticky;
+  //   flex: 1 1 60%;
+  //   top: 0;
+	// }
+
+  .canvas-wrapper {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+  }
 
 
 
