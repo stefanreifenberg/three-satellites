@@ -10,10 +10,10 @@
 	import { MeshInstance, useFrame } from '@threlte/core';
   import { geo_orbit } from '../data/DataStore.js'
 
-  let count = $geo_orbit.length;
-	let innerRadius = 390;
-	let outerRadius = 400;
-  let rotation = 0.0005;
+let count = $geo_orbit.length;
+let innerRadius = 390;
+let outerRadius = 400;
+let rotation = 0.0005;
 
   useFrame(
     () => {

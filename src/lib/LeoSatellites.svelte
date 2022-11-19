@@ -12,7 +12,6 @@ import { leo_orbit } from '../data/DataStore.js';
 
 let count = $leo_orbit.length;
 
-
 let innerRadius = 120;
 let outerRadius = 120;
 let rotation = 0.0005;
@@ -48,8 +47,6 @@ function initMesh(c, r) {
 
 $: range = {min: innerRadius, max: outerRadius}
 $: initMesh(count, range);
-
-
 </script>
 
 <MeshInstance mesh={instMesh} rotation={{y: rotation}} />

@@ -9,9 +9,17 @@
   import SatelliteModel from './SatelliteModel.svelte';
 
   export let startX = 80.2;
+  export let leo;
+  export let meo;
+  export let geo;
+
+  $: showLeo = leo;
+  $: showMeo = meo;
+  $: showGeo = geo;
+  $: console.log("showGeo",showGeo);
+
   let startY = 20;
   let startZ = 200;
-  let count = 5000;
 
   $: initialCameraPosition = {x:startX, y:startY, z:startZ};
 
@@ -25,33 +33,27 @@
 <Earth />
 
 <PerspectiveCamera fov={60} position={initialCameraPosition} lookAt={{ x: 0, y: 0, z: 0 }} >
-    <OrbitControls on:change={callback}/>
+    <!-- <OrbitControls on:change={callback}/> -->
 </PerspectiveCamera>
 <DirectionalLight position={{ x: 1, y: 1, z: 1 }} color={0xffffff} intensity={0.6} />
-
-<!-- <Environment
-        path = './cube_map/'
-        files= {['px.png', 'nx.png', 'py.png', 'ny.png', 'pz.png', 'nz.png']}
-        isBackground={true}
-      /> -->
-  
 
 <Environment
   path = './'
   files='hdr.png'
   isBackground={true}
 />
- 
-{#if $geo_orbit.length}
-  <GeoSatellites/>     
-{/if}
 
-{#if $leo_orbit.length}
+{#if showLeo}
   <LeoSatellites />
 {/if}
 
-{#if $meo_orbit.length}
+
+{#if showMeo}
   <MeoSatellites  />
+{/if}
+
+{#if showGeo}
+  <GeoSatellites/>     
 {/if}
 
 <style lang="scss">

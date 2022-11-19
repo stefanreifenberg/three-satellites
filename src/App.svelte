@@ -7,12 +7,24 @@
 
   let ready = false;
   let startX
+  $: leo = false;
+  $: meo = false;
+  $: geo = false;
+  $: console.log(meo)
 
   onMount(() => {
         ready = true;
     });
+
+
 </script>
-<!-- 
+
+<div class="canvas-wrapper">
+  <Canvas frameloop={"always"}>
+    <Scene startX={startX} leo={leo} meo={meo} geo={geo}/>
+  </Canvas>
+</div>
+
 
 <div class="hero">
     <section class="introsection">
@@ -34,52 +46,102 @@
     {/if}
     </section>
 </div>
+ 
 <div class="scrollysection">
   <div class="first-scroll-section"
     use:inview
     on:enter={(event) => {
+      leo = false;
+      meo= false
       startX = 200
   }}>
-    <p>
+    <p class="scrolly-p">
       The west portal with its lavish furnishings.</p>
   </div>
-</div>
-<div class="scroll-section"
+
+  <div class="scroll-section"
     use:inview
     on:enter={(event) => {
       startX = 300
+      leo = false;
+      meo = false
   }}>
-    <h3>Ecclesia</h3>
+    <h3>Section 2</h3>
     <hr>
-    <p>
-      Personifying the "church". Often sculpted as a large figure on the side of a church portal.
-      Usually young, attractive and generally adorned with a crown, chalice and cross-topped staff,
-       looking confidently forward.
+    <p class="scrolly-p">
+      Text
     </p>
-  </div> -->
-<div class="canvas-wrapper">
-  <Canvas>
-    <Scene startX={startX} />
-  </Canvas>
+  </div>
+
+  <div class="scroll-section"
+    use:inview
+    on:enter={(event) => {
+      console.log("enter")
+      startX = 200
+      leo = true
+      meo= false
+  }}>
+    <h3>Section 3</h3>
+    <hr>
+    <p class="scrolly-p">
+      show leo
+    </p>
+  </div>
+
+  <div class="scroll-section"
+    use:inview
+    on:enter={(event) => {
+      startX = 550
+      leo = false
+      meo = true
+  }}>
+    <h3>Section 4</h3>
+    <hr>
+    <p class="scrolly-p">
+      show meo
+    </p>
+  </div>
+
+  <div class="scroll-section"
+    use:inview
+    on:enter={(event) => {
+      startX = 800
+      meo = false
+      leo = false
+      geo = true
+  }}>
+    <h3>Section 5</h3>
+    <hr>
+    <p class="scrolly-p">
+      Text
+    </p>
+  </div>
+
+  <div class="scroll-section"
+    use:inview
+    on:enter={(event) => {
+      startX = 900
+      meo = true
+      leo = true
+      geo = true
+  }}>
+    <h3>Section 6</h3>
+    <hr>
+    <p class="scrolly-p">
+      Text
+    </p>
+  </div>
 </div>
+
 
 <style lang="scss">
 
-	// .canvas-wrapper {
-	// 	width: 100vw;
-	// 	height: 100vh;
-  //   position: sticky;
-  //   flex: 1 1 60%;
-  //   top: 0;
-	// }
-
   .canvas-wrapper {
-    position: relative;
+    position: sticky;
+    top: 0;
     width: 100vw;
     height: 100vh;
   }
-
-
 
   :global(body) {
 		overflow-x: hidden;
@@ -96,22 +158,9 @@
 		flex-direction: column;
 		justify-content: center;
 		text-align: center;
+    z-index: 2;
+    top:0;
 }
-
- // .hero::after {
-//     content: "";
-//     background: url("/images/header-image_comp.jpeg");
-//     background-size: cover;
-//     background-position: center;
-//     opacity: 0.5;
-//     top: 0;
-//     left: 0;
-//     bottom: 0;
-//     right: 0;
-//     position: absolute;
-//     z-index: -1;
-// }
-
 
 .hero h1 {
     font-family: 'Amiri', serif;
@@ -156,7 +205,7 @@
     font-family: 'Pangea', sans-serif;
     color: white;
     margin-top: 0vh;
-    margin-bottom: 100vh;
+    margin-bottom: 90vh;
     width: 13em;
     padding: 0.5em 0.6em;
     z-index: 10;
@@ -170,10 +219,13 @@
     color: white;
     font-size: 1.5em;
     margin-top: 70vh;
-    margin-bottom: 100vh;
+    margin-bottom: 90vh;
     width: 13em;
     padding: 0.5em 0.6em;
     z-index: 10;
+  }
+  .scrolly-p {
+    
   }
 
 </style>
