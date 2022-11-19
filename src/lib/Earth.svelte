@@ -19,7 +19,8 @@
 
   let globe = new ThreeGlobe({ animateIn: false })
       .globeImageUrl('//unpkg.com/three-globe/example/img/earth-blue-marble.jpg')
-      .bumpImageUrl('//unpkg.com/three-globe/example/img/earth-topology.png');
+      .bumpImageUrl('//unpkg.com/three-globe/example/img/earth-topology.png')
+      .showAtmosphere(false);
 
 
     // custom globe material
@@ -40,6 +41,3 @@
 
 <Clouds />
 <Object3DInstance object={globe} rotation={{y: rotation}}/>
-
-
-

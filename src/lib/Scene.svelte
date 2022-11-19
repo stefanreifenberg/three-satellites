@@ -7,8 +7,22 @@
   import MeoSatellites from './MeoSatellites.svelte';
   import { geo_orbit, leo_orbit, meo_orbit } from '../data/DataStore.js'
   import SatelliteModel from './SatelliteModel.svelte';
+  import { tweened } from 'svelte/motion';
+  import { cubicInOut } from 'svelte/easing';
 
   export let startX = 80.2;
+  
+
+  let startX_tweened = tweened(0, {
+		duration: 2000,
+        easing: cubicInOut
+	});
+
+  $: $startX_tweened = startX;
+
+  console.log($startX_tweened)
+
+  
   export let leo;
   export let meo;
   export let geo;
@@ -29,13 +43,13 @@
   }
 
 </script>
-<SatelliteModel />
+<!-- <SatelliteModel /> -->
 <Earth />
 
-<PerspectiveCamera fov={60} position={initialCameraPosition} lookAt={{ x: 0, y: 0, z: 0 }} >
-    <!-- <OrbitControls on:change={callback}/> -->
+<PerspectiveCamera fov={60} position={{x: $startX_tweened, y: startY, z: startZ}} lookAt={{ x: 0, y: 0, z: 0 }} >
+    <!-- <OrbitControls /> -->
 </PerspectiveCamera>
-<DirectionalLight position={{ x: 1, y: 1, z: 1 }} color={0xffffff} intensity={0.6} />
+<DirectionalLight position={{ x: 1, y: 1, z: 1 }} color={0xffffff} intensity={0.5} />
 
 <Environment
   path = './'

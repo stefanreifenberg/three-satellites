@@ -10,10 +10,12 @@
   $: leo = false;
   $: meo = false;
   $: geo = false;
-  $: console.log(meo)
 
   onMount(() => {
         ready = true;
+        leo = false;
+        meo = false;
+        geo = false;
     });
 
 
