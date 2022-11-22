@@ -11,34 +11,14 @@ import { randInt, randFloat } from 'three/src/math/MathUtils';
 import { heo_orbit } from '../data/DataStore.js';
 
 let count = $heo_orbit.length;
-//let count = 10000
-
 let innerRadius = 800;
 let outerRadius = 800;
 
-let rotation = 0.0005;
-
-useFrame(
-	() => {
-	rotation += 0.0002;
-	}
-)  
-
-
-const vec3OnSphere = (range) => {
-	const length = randInt(range.min, range.max)
-	return new Vector3(
-		randFloat(-Math.PI, Math.PI),
-		randFloat(-0.2, 0.2),
-		randFloat(-Math.PI, Math.PI)
-	).clampLength(length, length);
-}
-
-const A = 1; // equatorial radius
+const A = 1; 
 const FE = 1 / 2; // flattening
-const B = A * (1 - FE); // polar radius
+const B = A * (1 - FE); 
 const C = A * 0.7;
-const radius = (A + B + C) / 3; // mean Earth radi
+const radius = (A + B + C) / 3; 
 
 // create an ellipsoid function
 const vec3OnEllipsoid = (range) => {
@@ -69,6 +49,6 @@ $: initMesh(count, range);
 
 </script>
 
-<MeshInstance mesh={instMesh} rotation={{ z: 200}} scale={{x:A / radius, y:B / radius, z: C / radius}} position={{}}/>
+<MeshInstance mesh={instMesh} rotation={{z: 200}} scale={{x:A / radius, y:B / radius, z: C / radius}} position={{x:-200, y: 650}}/>
   
   

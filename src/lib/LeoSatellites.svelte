@@ -15,12 +15,12 @@ console.log("leo",count)
 
 let innerRadius = 120;
 let outerRadius = 120;
-let rotation = 0.0005;
-let eartRotation = 0.0005;
+let rotation = 0;
+let eartRotation = 1;
 
 useFrame(
     () => {
-      rotation += eartRotation * 1;
+      rotation += eartRotation * 0.001;
     }
   )  
 

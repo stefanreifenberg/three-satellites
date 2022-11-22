@@ -40,10 +40,10 @@
 
   $: initialCameraPosition = {x:startX, y:startY, z:startZ};
 
-  const { camera } = useThrelte()
-  const callback = () => {
-    console.log($camera.position)
-  }
+  // const { camera } = useThrelte()
+  // const callback = () => {
+  //   console.log($camera.position)
+  // }
 
 </script>
 
@@ -51,10 +51,8 @@
 <Earth />
 
 <PerspectiveCamera fov={60} position={{x: $startX_tweened, y: startY, z: startZ}} lookAt={{ x: 0, y: 0, z: 0 }} near={1} far={5000} >
-    <OrbitControls on:change={callback}/>
+  <!-- <OrbitControls /> -->
 </PerspectiveCamera>
-
-
 
 <DirectionalLight position={{ x: 1, y: 1, z: 1 }} color={0xffffff} intensity={0.5} />
 
@@ -63,11 +61,6 @@
   files='hdr.png'
   isBackground={true}
 />
-
-<!-- <LeoSatellites />
-<MeoSatellites />
-<GeoSatellites /> -->
-<HeoSatellites />
 
 {#if showLeo}
   <LeoSatellites />

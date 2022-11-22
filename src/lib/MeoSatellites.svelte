@@ -13,12 +13,11 @@ import { meo_orbit } from '../data/DataStore.js';
 let count = $meo_orbit.length;
 let innerRadius = 250;
 let outerRadius = 270;
-
-let rotation = 0.0005;
+let rotation = 1;
 
 useFrame(
 	() => {
-	rotation += 0.0002;
+	rotation += 0.0001;
 	}
 )  
 

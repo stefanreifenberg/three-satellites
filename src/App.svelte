@@ -10,6 +10,7 @@
   let ready = false;
   let startX
   let visible = false;
+  let visible1 = false;
   $: leo = false;
   $: meo = false;
   $: geo = false;
@@ -27,12 +28,12 @@
 </script>
 
 <div class="canvas-wrapper">
-  <Canvas frameloop={"always"}>
+  <Canvas frameloop={"demand"}>
     <Scene startX={startX} leo={leo} meo={meo} geo={geo} heo={heo}/>
   </Canvas>
 </div>
 
-<!-- 
+
 <div class="hero">
     <section class="introsection">
 
@@ -73,6 +74,7 @@
   <div class="scroll-section"
     use:inview
     on:enter={(event) => {
+      visible1 = true
       startX = 300
       leo = false;
       meo = false
@@ -80,7 +82,17 @@
       heo = false
   }}>
     <p class="scrolly-p">
-      Text
+      In total there are 2,000 satellites in orbit around the Earth. Let's focus on the different orbits starting with 
+      the
+      <Annotation
+        bind:visible={visible1}
+        color="lightgreen"
+        type="highlight"
+        multiline
+        animate={true}
+        iterations={3}>
+        lower earth orbit (LEO).
+      </Annotation>
     </p>
   </div>
 
@@ -133,8 +145,6 @@
       geo = true
       heo = false
   }}>
-    <h3>Section 5</h3>
-    <hr>
     <p class="scrolly-p">
       In the geostationary orbit exist roughly 5000 satellites. Most of them are in the range of (500km) to 2000km.
     </p>
@@ -143,7 +153,7 @@
   <div class="scroll-section"
     use:inview
     on:enter={(event) => {
-      startX = 1200
+      startX = 1500
       meo = false
       leo = false
       geo = false
@@ -166,12 +176,12 @@
       heo = true
   }}>
     <p class="scrolly-p">
-      Text
+      All satellites in the earth orbit are in the range of (500km) to 2000km.
     </p>
   </div>
 </div>
 
-<Footer/> -->
+<Footer/>
 
 <style lang="scss">
 

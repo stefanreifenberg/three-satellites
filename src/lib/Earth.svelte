@@ -4,7 +4,8 @@
   import {TextureLoader, Color, Mesh, SphereGeometry, MeshPhongMaterial, MeshBasicMaterial} from 'three';
   import Clouds from './Clouds.svelte';
 
-  let rotation = 0;
+  let rotation = 1;
+
 
   useFrame(
     () => globe = globe,
