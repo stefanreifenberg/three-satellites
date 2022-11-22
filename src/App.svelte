@@ -4,18 +4,23 @@
   import { fly } from 'svelte/transition';
   import { onMount } from 'svelte';
   import { inview } from "svelte-inview";
+  import { Annotation } from 'svelte-rough-notation';
+  import Footer from './lib/Footer.svelte';
 
   let ready = false;
   let startX
+  let visible = false;
   $: leo = false;
   $: meo = false;
   $: geo = false;
+  $: heo = false;
 
   onMount(() => {
         ready = true;
         leo = false;
         meo = false;
         geo = false;
+        heo = false;
     });
 
 
@@ -23,26 +28,27 @@
 
 <div class="canvas-wrapper">
   <Canvas frameloop={"always"}>
-    <Scene startX={startX} leo={leo} meo={meo} geo={geo}/>
+    <Scene startX={startX} leo={leo} meo={meo} geo={geo} heo={heo}/>
   </Canvas>
 </div>
 
-
+<!-- 
 <div class="hero">
     <section class="introsection">
 
     {#if ready}
         <div class="big-text">
             <div >
-                <p>Weltraumschrott</p>
-                <h1 in:fly="{{ y: 150, duration: 1600 }}">Unser Müll im All</h1>
+                <span></span>
+                <h1 in:fly="{{ y: 150, duration: 1600 }}">Earth's satellites</h1>
             </div>
         </div>    
 
             <div class="hero-text" in:fly="{{ y: 150, duration: 1800, delay:500 }}">
-                <p>Kaputte Satelliten und Raketen, Trümmer aus Kollisionen und Angriffen:
-                   Eine Wolke aus Schrott kreist um die Erde. Eine Gefahr für die Raumfahrt – und unsere Zivilisation
-                </p>
+                <span>The first artificial satellite to be launched into the Earth's orbit was the Soviet Union's Sputnik 1,
+                  on 4 October 1957. Since then, thousands of satellites have been launched into orbit around the Earth,
+                   and many more have been launched into orbit around other celestial bodies.
+                </span>
             </div>
         
     {/if}
@@ -55,10 +61,13 @@
     on:enter={(event) => {
       leo = false;
       meo= false
+      geo = false
+      heo = false
       startX = 200
   }}>
     <p class="scrolly-p">
-      The west portal with its lavish furnishings.</p>
+      Focus on the Satellite model
+    </p>
   </div>
 
   <div class="scroll-section"
@@ -67,9 +76,9 @@
       startX = 300
       leo = false;
       meo = false
+      geo = false
+      heo = false
   }}>
-    <h3>Section 2</h3>
-    <hr>
     <p class="scrolly-p">
       Text
     </p>
@@ -82,11 +91,11 @@
       startX = 200
       leo = true
       meo= false
+      geo = false
+      heo = false
   }}>
-    <h3>Section 3</h3>
-    <hr>
     <p class="scrolly-p">
-      show leo
+      In the lower earth orbit exist roughly 5000 satellites. Most of them are in the range of (500km) to 2000km.
     </p>
   </div>
 
@@ -94,14 +103,25 @@
     use:inview
     on:enter={(event) => {
       startX = 550
+      visible = true
       leo = false
       meo = true
+      geo = false
+      heo = false
   }}>
-    <h3>Section 4</h3>
-    <hr>
-    <p class="scrolly-p">
-      show meo
-    </p>
+    <span class="scrolly-span">
+      In the middle earth orbit exist roughly
+      <Annotation
+        bind:visible={visible}
+        color="lightgreen"
+        type="highlight"
+        multiline
+        animate={true}
+        iterations={3}>
+        5000
+      </Annotation>
+      satellites. Most of them are in the range of (500km) to 2000km.
+    </span>
   </div>
 
   <div class="scroll-section"
@@ -111,30 +131,47 @@
       meo = false
       leo = false
       geo = true
+      heo = false
   }}>
     <h3>Section 5</h3>
     <hr>
     <p class="scrolly-p">
-      Text
+      In the geostationary orbit exist roughly 5000 satellites. Most of them are in the range of (500km) to 2000km.
     </p>
   </div>
 
   <div class="scroll-section"
     use:inview
     on:enter={(event) => {
-      startX = 900
-      meo = true
-      leo = true
-      geo = true
+      startX = 1200
+      meo = false
+      leo = false
+      geo = false
+      heo = true
   }}>
     <h3>Section 6</h3>
     <hr>
+    <p class="scrolly-p">
+      In the high earth orbit exist roughly 5000 satellites. Most of them are in the range of (500km) to 2000km.
+    </p>
+  </div>
+
+  <div class="scroll-section"
+    use:inview
+    on:enter={(event) => {
+      startX = 1300
+      meo = true
+      leo = true
+      geo = true
+      heo = true
+  }}>
     <p class="scrolly-p">
       Text
     </p>
   </div>
 </div>
 
+<Footer/> -->
 
 <style lang="scss">
 
@@ -172,7 +209,6 @@
     font-size: 6rem;
     color: white;
     z-index:1;
-   
 }
 
 .hero p {
@@ -226,7 +262,7 @@
     padding: 0.5em 0.6em;
     z-index: 10;
   }
-  .scrolly-p {
+  .scrolly-span {
     
   }
 

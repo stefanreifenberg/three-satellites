@@ -32,3 +32,11 @@ import {
       }
     );
   });
+
+  export const heo_orbit = readable([], (set) => {
+    Promise.all([csv("/data/heo_orbit.csv", autoType)]).then(
+      (d) => {
+        set(d[0]);
+      }
+    );
+  });

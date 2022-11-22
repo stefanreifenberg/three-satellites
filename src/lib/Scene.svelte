@@ -5,12 +5,13 @@
   import GeoSatellites from './GeoSatellites.svelte'
   import LeoSatellites from './LeoSatellites.svelte'
   import MeoSatellites from './MeoSatellites.svelte';
+  import HeoSatellites from './HeoSatellites.svelte';
   import { geo_orbit, leo_orbit, meo_orbit } from '../data/DataStore.js'
   import SatelliteModel from './SatelliteModel.svelte';
   import { tweened } from 'svelte/motion';
   import { cubicInOut } from 'svelte/easing';
 
-  export let startX = 80.2;
+  export let startX = 181;
   
 
   let startX_tweened = tweened(0, {
@@ -26,29 +27,35 @@
   export let leo;
   export let meo;
   export let geo;
+  export let heo;
 
   $: showLeo = leo;
   $: showMeo = meo;
   $: showGeo = geo;
-  $: console.log("showGeo",showGeo);
+  $: showHeo = heo;
+  $: console.log("showHeo",showHeo);
 
-  let startY = 20;
-  let startZ = 200;
+  let startY = 122;
+  let startZ = 1.9;
 
   $: initialCameraPosition = {x:startX, y:startY, z:startZ};
 
   const { camera } = useThrelte()
   const callback = () => {
-    //console.log($camera.position)
+    console.log($camera.position)
   }
 
 </script>
-<!-- <SatelliteModel /> -->
+
+<SatelliteModel />
 <Earth />
 
-<PerspectiveCamera fov={60} position={{x: $startX_tweened, y: startY, z: startZ}} lookAt={{ x: 0, y: 0, z: 0 }} >
-    <!-- <OrbitControls /> -->
+<PerspectiveCamera fov={60} position={{x: $startX_tweened, y: startY, z: startZ}} lookAt={{ x: 0, y: 0, z: 0 }} near={1} far={5000} >
+    <OrbitControls on:change={callback}/>
 </PerspectiveCamera>
+
+
+
 <DirectionalLight position={{ x: 1, y: 1, z: 1 }} color={0xffffff} intensity={0.5} />
 
 <Environment
@@ -56,6 +63,11 @@
   files='hdr.png'
   isBackground={true}
 />
+
+<!-- <LeoSatellites />
+<MeoSatellites />
+<GeoSatellites /> -->
+<HeoSatellites />
 
 {#if showLeo}
   <LeoSatellites />
@@ -69,6 +81,11 @@
 {#if showGeo}
   <GeoSatellites/>     
 {/if}
+
+{#if showHeo}
+  <HeoSatellites/>     
+{/if}
+
 
 <style lang="scss">
 
