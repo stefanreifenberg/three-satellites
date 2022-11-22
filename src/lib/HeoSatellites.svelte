@@ -14,11 +14,11 @@ let count = $heo_orbit.length;
 let innerRadius = 800;
 let outerRadius = 800;
 
-const A = 1; 
+const A = 1;
 const FE = 1 / 2; // flattening
 const B = A * (1 - FE); 
 const C = A * 0.7;
-const radius = (A + B + C) / 3; 
+const radius = (A + B + C) / 3;
 
 // create an ellipsoid function
 const vec3OnEllipsoid = (range) => {

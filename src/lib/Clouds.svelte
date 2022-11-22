@@ -1,7 +1,7 @@
 <script>
     // create a transparent sphere to represent the earth
     import { Mesh, useFrame } from '@threlte/core'
-    import { SphereGeometry, MeshBasicMaterial, TextureLoader, MeshPhongMaterial } from 'three'
+    import { SphereGeometry, TextureLoader, MeshPhongMaterial } from 'three'
 
     let rotation = 0
 
@@ -10,7 +10,6 @@
             rotation += 0.0004;
         }
     )
-
 
     // load the cloud texture and add it to the material
     const texture = new TextureLoader().load('clouds.png')

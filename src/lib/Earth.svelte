@@ -5,16 +5,11 @@
   import Clouds from './Clouds.svelte';
 
   let rotation = 1;
-
-
-  useFrame(
-    () => globe = globe,
-    )
-
+  let speed
     // add rotation
   useFrame(
     () => {
-      rotation += 0.0005;
+      rotation += 0.0005
     }
   )  
 
@@ -38,7 +33,6 @@
 
     
 </script>
-
 
 <Clouds />
 <Object3DInstance object={globe} rotation={{y: rotation}}/>

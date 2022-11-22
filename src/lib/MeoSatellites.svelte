@@ -11,13 +11,14 @@ import { randInt, randFloat } from 'three/src/math/MathUtils';
 import { meo_orbit } from '../data/DataStore.js';
 
 let count = $meo_orbit.length;
-let innerRadius = 250;
-let outerRadius = 270;
+
+let innerRadius = 131.39;
+let outerRadius = 665.06;
 let rotation = 1;
 
 useFrame(
 	() => {
-	rotation += 0.0001;
+	rotation += 0.001;
 	}
 )  
 

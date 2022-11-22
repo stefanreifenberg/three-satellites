@@ -9,6 +9,8 @@
 
   let ready = false;
   let startX
+  let heoY = 122;
+  let zed = 1.9;
   let visible = false;
   let visible1 = false;
   $: leo = false;
@@ -29,7 +31,7 @@
 
 <div class="canvas-wrapper">
   <Canvas frameloop={"demand"}>
-    <Scene startX={startX} leo={leo} meo={meo} geo={geo} heo={heo}/>
+    <Scene startX={startX} heoY={heoY} zed={zed} leo={leo} meo={meo} geo={geo} heo={heo}/>
   </Canvas>
 </div>
 
@@ -153,14 +155,15 @@
   <div class="scroll-section"
     use:inview
     on:enter={(event) => {
-      startX = 1500
+      startX = 950
+      heoY = 1058
+      zed = -3294
+      
       meo = false
       leo = false
       geo = false
       heo = true
   }}>
-    <h3>Section 6</h3>
-    <hr>
     <p class="scrolly-p">
       In the high earth orbit exist roughly 5000 satellites. Most of them are in the range of (500km) to 2000km.
     </p>
@@ -169,7 +172,9 @@
   <div class="scroll-section"
     use:inview
     on:enter={(event) => {
-      startX = 1300
+      startX = 800
+      heoY = 122
+      zed = 120
       meo = true
       leo = true
       geo = true

@@ -11,10 +11,10 @@ import { randInt, randFloat } from 'three/src/math/MathUtils';
 import { leo_orbit } from '../data/DataStore.js';
 
 let count = $leo_orbit.length;
-console.log("leo",count)
 
-let innerRadius = 120;
-let outerRadius = 120;
+let innerRadius = 103.14;
+let outerRadius = 131.39;
+
 let rotation = 0;
 let eartRotation = 1;
 
