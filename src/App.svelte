@@ -9,8 +9,8 @@
 
   let ready = false;
   let startX
-  let heoY = 122;
-  let zed = 1.9;
+  let heoY = 15;
+  let zed = 1;
   let visible = false;
   let visible1 = false;
   $: leo = false;
@@ -45,12 +45,11 @@
                 <span></span>
                 <h1 in:fly="{{ y: 150, duration: 1600 }}">Earth's satellites</h1>
             </div>
-        </div>    
+        </div>   
 
             <div class="hero-text" in:fly="{{ y: 150, duration: 1800, delay:500 }}">
-                <span>The first artificial satellite to be launched into the Earth's orbit was the Soviet Union's Sputnik 1,
-                  on 4 October 1957. Since then, thousands of satellites have been launched into orbit around the Earth,
-                   and many more have been launched into orbit around other celestial bodies.
+                <span>
+                  Explore the different types of satellites orbiting Earth.
                 </span>
             </div>
         
@@ -69,7 +68,9 @@
       startX = 200
   }}>
     <p class="scrolly-p">
-      Focus on the Satellite model
+      The first artificial satellite to be launched into the Earth's orbit was the Soviet Union's Sputnik 1,
+      on 4 October 1957. Since then, thousands of satellites have been launched into orbit around the Earth,
+      and many more have been launched into orbit around other celestial bodies.
     </p>
   </div>
 

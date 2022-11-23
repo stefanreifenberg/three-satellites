@@ -10,13 +10,12 @@
   import { tweened } from 'svelte/motion';
   import { cubicInOut } from 'svelte/easing';
 
-  export let startX = 181;
+  export let startX = 162;
 
   let startX_tweened = tweened(0, {
 		duration: 2000,
         easing: cubicInOut
 	});
-
 
   let heoY_tweened = tweened(0, {
     duration: 2000,
