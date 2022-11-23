@@ -20,10 +20,10 @@
 
   onMount(() => {
         ready = true;
-        leo = false;
-        meo = false;
-        geo = false;
-        heo = false;
+        leo = true;
+        meo = true;
+        geo = true;
+        heo = true;
     });
 
 
