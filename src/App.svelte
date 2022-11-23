@@ -30,7 +30,7 @@
 </script>
 
 <div class="canvas-wrapper">
-  <Canvas frameloop={"demand"}>
+  <Canvas>
     <Scene startX={startX} heoY={heoY} zed={zed} leo={leo} meo={meo} geo={geo} heo={heo}/>
   </Canvas>
 </div>
