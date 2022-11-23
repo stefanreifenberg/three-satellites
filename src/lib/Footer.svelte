@@ -16,11 +16,14 @@
                 ready = true;
              }}>
             {#if ready}
-            <h1 in:fly="{{ y: 150, duration: 1600 }}">Attribution</h1>
+            <h1 in:fly="{{ y: 150, duration: 1600 }}">Methods</h1>
             <div class="footer-text">
-                <p in:fly="{{ y: 150, duration: 1600 }}">
-                    The GLTF used in this example was made by <a href="https://www.netgis.de/">netgis:</a>
-                    <a href="https://sketchfab.com/netgis">https://sketchfab.com/netgis</a>
+                <p in:fly="{{ y: 150, duration: 1600, delay:500 }}">
+                    this work is inspired by the <a class="kaldera-link" href="https://www.zeit.de/wissen/2022-10/weltraumschrott-satelliten-raumfahrt-gefahr-forschung">this</a> article from the german newspaper "Die Zeit" 
+                </p>
+                <p in:fly="{{ y: 150, duration: 1600, delay:500  }}">
+                    This work is based on "Simple Satellite Low Poly Free" (https://sketchfab.com/3d-models/simple-satellite-low-poly-free-f23b484cda664f1cb91b4f62ea5ef8bf)
+                    by DjalalxJay (https://sketchfab.com/djalalxjay) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
                 </p>
                 <p in:fly="{{ y: 150, duration: 1600, delay:500 }}">
                     follow me on twitter: <a href="https://twitter.com/reyfenberg">@reyfenberg</a>
@@ -29,6 +32,7 @@
                     want to work with us? <a class="kaldera-link" href="https://kaldera.dev">kaldera.dev</a>
                 </p>
             </div>
+            
              <!-- Back to top button -->
             <div in:fly="{{ y: 150, duration: 1600, delay:700 }}">
                 <a on:click={backToTop} id="button"></a>
@@ -39,10 +43,14 @@
     </div>
     
     <style lang="scss">
+    // .footer-text {
+    //     float: left;
+    // }
       .footer h1 {
             margin-top: 0;
             font-weight: 200;
-            font-size: 6rem;
+            font-size: 3rem;
+            // float: left;
             color: white;
             z-index:1;
             @media only screen and (max-width: 768px)  {
@@ -53,7 +61,7 @@
         .footer p {
             font-weight: 200;
             font-family: 'Pangea', sans-serif;
-            font-size: 2rem;
+            font-size: 1rem;
             line-height: 3em;
             width: 80%;
             margin: 0 auto;
@@ -67,10 +75,10 @@
             height: 100vh;
             position: relative;
             display: flex;
-            place-items: center;
+            place-items: start;
             flex-direction: column;
-            justify-content: center;
-            text-align: center;
+            justify-content: start;
+            text-align: start;
             background-color: black;
             z-index: 2;
         }

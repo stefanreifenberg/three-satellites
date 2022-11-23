@@ -57,7 +57,7 @@
 <Earth />
 
 <PerspectiveCamera fov={60} position={{x: $startX_tweened, y: $heoY_tweened, z: $zed_tweened}} lookAt={{ x: 0, y: 0, z: 0 }} near={1} far={5000} >
-  <OrbitControls on:change={callback}/>
+  <!-- <OrbitControls on:change={callback}/> -->
 </PerspectiveCamera>
 
 <DirectionalLight position={{ x: 1, y: 1, z: 1 }} color={0xffffff} intensity={0.5} />
