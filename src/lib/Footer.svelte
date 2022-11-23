@@ -34,7 +34,7 @@
             </div>
             
              <!-- Back to top button -->
-            <div in:fly="{{ y: 150, duration: 1600, delay:700 }}">
+            <div class="button-div"in:fly="{{ y: 150, duration: 1600, delay:700 }}">
                 <a on:click={backToTop} id="button"></a>
             </div> 
             {/if}
@@ -110,6 +110,13 @@
         }
         #button:active {
             background-color: #555;
+        }
+        /* center the button div */
+        .button-div {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translate(-50%, -50%);
         }
         .kaldera-link {
             color: #FF9800;

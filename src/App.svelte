@@ -46,7 +46,7 @@
         </div>
         <div class="hero-text" in:fly="{{ y: 150, duration: 1800, delay:500 }}">
             <span>
-              Explore the different types of satellites orbiting Earth.
+              Explore the different types of objects orbiting Earth.
             </span>
         </div>
     {/if}
@@ -85,7 +85,7 @@
       heo = false
   }}>
     <p class="scrolly-p">
-      In total there are 2,000 satellites in orbit around the Earth. Let's focus on the different orbits starting with 
+      We visualized roughly 9000 objects in orbit around the Earth. Let's focus on the different orbits starting with 
       the
       <Annotation
         bind:visible={visible1}
@@ -96,7 +96,7 @@
         iterations={3}>
         lower earth orbit (LEO).
       </Annotation>
-      Most of them are in the range of 500km to 2000km.
+      Most of the objects are in the range of 200km to 2000km above the earth's surface.
     </p>
   </div>
 
@@ -121,9 +121,9 @@
         multiline
         animate={true}
         iterations={3}>
-        5000
+        250
       </Annotation>
-      satellites. Most of them are in the range of 500km to 2000km.
+      satellites. The objects are spread out from 2000km to 35000km above the surface.
     </span>
   </div>
 
@@ -139,7 +139,8 @@
       heo = false
   }}>
     <p class="scrolly-p">
-      In the geostationary orbit exist roughly 5000 satellites. Most of them are in the range of (500km) to 2000km.
+      In the geostationary orbit exist roughly 1000 satellites.
+       All of them are mostly stationary in a height of 36000km.
     </p>
   </div>
 
@@ -155,7 +156,8 @@
       heo = true
   }}>
     <p class="scrolly-p">
-      In the high earth orbit exist roughly 5000 satellites. Most of them are in the range of (500km) to 2000km.
+      In the high elliptical orbit (HEO) exist roughly 200 objects. Diffent types of elliptical orbits exist, 
+      One example is the Molniya orbits, named after the Molniya Soviet communication satellites.
     </p>
   </div>
 

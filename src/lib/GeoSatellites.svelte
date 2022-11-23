@@ -17,7 +17,7 @@ let rotation = 0;
 
   useFrame(
     () => {
-      rotation += 0.0001;
+      rotation += 0.0003;
     }
   )
 

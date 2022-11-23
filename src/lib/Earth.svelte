@@ -9,16 +9,15 @@
     // add rotation
   useFrame(
     () => {
-      rotation += 0.0005
+      rotation += 0.0002
     }
-  )  
+  )
 
   let globe = new ThreeGlobe({ animateIn: false })
       .globeImageUrl('//unpkg.com/three-globe/example/img/earth-blue-marble.jpg')
       .bumpImageUrl('//unpkg.com/three-globe/example/img/earth-topology.png')
       .showAtmosphere(false);
-
-
+      
     // custom globe material
     const globeMaterial = globe.globeMaterial();
 
