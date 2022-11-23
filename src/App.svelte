@@ -37,22 +37,18 @@
 
 
 <div class="hero">
-    <section class="introsection">
-
+    <section class="">
     {#if ready}
         <div class="big-text">
             <div >
-                <span></span>
                 <h1 in:fly="{{ y: 150, duration: 1600 }}">Earth's satellites</h1>
             </div>
-        </div>   
-
-            <div class="hero-text" in:fly="{{ y: 150, duration: 1800, delay:500 }}">
-                <span>
-                  Explore the different types of satellites orbiting Earth.
-                </span>
-            </div>
-        
+        </div>
+        <div class="hero-text" in:fly="{{ y: 150, duration: 1800, delay:500 }}">
+            <span>
+              Explore the different types of satellites orbiting Earth.
+            </span>
+        </div>
     {/if}
     </section>
 </div>
@@ -66,6 +62,8 @@
       geo = false
       heo = false
       startX = 200
+      heoY = 15
+      zed = 1
   }}>
     <p class="scrolly-p">
       The first artificial satellite to be launched into the Earth's orbit was the Soviet Union's Sputnik 1,
@@ -79,7 +77,9 @@
     on:enter={(event) => {
       visible1 = true
       startX = 300
-      leo = false;
+      heoY = 15
+      zed = 1
+      leo = true;
       meo = false
       geo = false
       heo = false
@@ -96,28 +96,16 @@
         iterations={3}>
         lower earth orbit (LEO).
       </Annotation>
+      Most of them are in the range of 500km to 2000km.
     </p>
   </div>
 
   <div class="scroll-section"
     use:inview
     on:enter={(event) => {
-      console.log("enter")
-      startX = 200
-      leo = true
-      meo= false
-      geo = false
-      heo = false
-  }}>
-    <p class="scrolly-p">
-      In the lower earth orbit exist roughly 5000 satellites. Most of them are in the range of (500km) to 2000km.
-    </p>
-  </div>
-
-  <div class="scroll-section"
-    use:inview
-    on:enter={(event) => {
-      startX = 550
+      startX = 700
+      heoY = 15
+      zed = 1
       visible = true
       leo = false
       meo = true
@@ -135,14 +123,16 @@
         iterations={3}>
         5000
       </Annotation>
-      satellites. Most of them are in the range of (500km) to 2000km.
+      satellites. Most of them are in the range of 500km to 2000km.
     </span>
   </div>
 
   <div class="scroll-section"
     use:inview
     on:enter={(event) => {
-      startX = 800
+      startX = 900
+      heoY = 1058
+      zed = -1000
       meo = false
       leo = false
       geo = true
@@ -159,7 +149,6 @@
       startX = 950
       heoY = 1058
       zed = -3294
-      
       meo = false
       leo = false
       geo = false
@@ -173,9 +162,9 @@
   <div class="scroll-section"
     use:inview
     on:enter={(event) => {
-      startX = 800
-      heoY = 122
-      zed = 120
+      startX = 1000
+      heoY = 500
+      zed = 300
       meo = true
       leo = true
       geo = true
@@ -201,24 +190,34 @@
   :global(body) {
 		overflow-x: hidden;
     background-color: black;
+    font-family: 'Pangea', sans-serif;
 	}
 
+  .introsection {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+  }
 
 .hero {
     height: 50%;
+    font-family: 'Pangea', sans-serif;
     position: absolute;
+    width: 100%;
+    margin: auto;
     margin-bottom: 12rem;
-		display: flex;
-		place-items: center;
-		flex-direction: column;
-		justify-content: center;
-		text-align: center;
+    display: flex;
+    place-items: center;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
     z-index: 2;
-    top:0;
+    top: 0;
 }
 
 .hero h1 {
-    font-family: 'Amiri', serif;
     font-weight: 200;
     width: 100%;
     margin-top: 0;

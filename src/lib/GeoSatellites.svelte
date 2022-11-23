@@ -30,7 +30,7 @@ let rotation = 0;
 		).clampLength(length, length);
 	}
 	
-	const geometry = new SphereGeometry(0.8);
+	const geometry = new SphereGeometry(1.2);
 	const material = new MeshBasicMaterial({color: 'green'});
 	
 	let instMesh;
