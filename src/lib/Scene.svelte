@@ -55,7 +55,7 @@
 <SatelliteModel />
 <Earth />
 
-<PerspectiveCamera fov={60} position={{x: $startX_tweened, y: $heoY_tweened, z: $zed_tweened}} lookAt={{ x: 0, y: 0, z: 0 }} near={1} far={5000} >
+<PerspectiveCamera fov={50} position={{x: $startX_tweened, y: $heoY_tweened, z: $zed_tweened}} lookAt={{ x: 0, y: 0, z: 0 }} near={1} far={5000} >
   <!-- <OrbitControls on:change={callback}/> -->
 </PerspectiveCamera>
 

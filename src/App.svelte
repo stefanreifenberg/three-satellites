@@ -73,7 +73,7 @@
     use:inview
     on:enter={(event) => {
       visible1 = true
-      startX = 300
+      startX = 350
       heoY = 15
       zed = 1
       leo = true;
@@ -100,7 +100,7 @@
   <div class="scroll-section"
     use:inview
     on:enter={(event) => {
-      startX = 700
+      startX = 950
       heoY = 15
       zed = 1
       visible = true
@@ -153,7 +153,7 @@
   <div class="scroll-section"
     use:inview
     on:enter={(event) => {
-      startX = 950
+      startX = 1000
       heoY = 1058
       zed = -3294
       meo = false
@@ -188,9 +188,9 @@
   <div class="scroll-section"
     use:inview
     on:enter={(event) => {
-      startX = 1000
-      heoY = 500
-      zed = 300
+      startX = 1200
+      heoY = 600
+      zed = 350
       meo = true
       leo = true
       geo = true
