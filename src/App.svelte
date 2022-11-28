@@ -25,8 +25,6 @@
         geo = true;
         heo = true;
     });
-
-
 </script>
 
 <div class="canvas-wrapper">
@@ -45,7 +43,7 @@
         </div>
         <div class="hero-text" in:fly="{{ y: 150, duration: 1800, delay:500 }}">
             <span>
-              Explore the different types of objects orbiting Earth.
+              Visualizing 9000 satellites in Earth's orbit.
             </span>
         </div>
     {/if}
