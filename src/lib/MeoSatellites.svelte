@@ -32,7 +32,7 @@ return new Vector3(
 ).clampLength(length, length);
 }
 
-const geometry = new SphereGeometry(1.2);
+const geometry = new SphereGeometry(1.5);
 const material = new MeshBasicMaterial({color: 'red'});
 
 let instMesh;
