@@ -35,7 +35,6 @@
   </Canvas>
 </div>
 
-
 <div class="hero">
     <section class="">
     {#if ready}
@@ -89,11 +88,11 @@
       the
       <Annotation
         bind:visible={visible1}
-        color="lightgreen"
+        color="blue"
         type="highlight"
         multiline
         animate={true}
-        iterations={3}>
+        iterations={2}>
         lower earth orbit (LEO).
       </Annotation>
       Most of the objects are in the range of 200km to 2000km above the earth's surface.
@@ -116,14 +115,14 @@
       In the middle earth orbit exist roughly
       <Annotation
         bind:visible={visible}
-        color="lightgreen"
+        color="red"
         type="highlight"
         multiline
         animate={true}
-        iterations={3}>
-        250
+        iterations={2}>
+        250 satellites.
       </Annotation>
-      satellites. The objects are spread out from 2000km to 35000km above the surface.
+       The objects are spread out from 2000km to 35000km above the surface.
     </span>
   </div>
 
@@ -139,7 +138,16 @@
       heo = false
   }}>
     <p class="scrolly-p">
-      In the geostationary orbit exist roughly 1000 satellites.
+      In the geostationary orbit (GEO) are roughly
+      <Annotation
+        bind:visible={visible}
+        color="green"
+        type="highlight"
+        multiline
+        animate={true}
+        iterations={2}>
+        1000 satellites.
+      </Annotation> 
        All of them are mostly stationary in a height of 36000km.
     </p>
   </div>
@@ -156,8 +164,26 @@
       heo = true
   }}>
     <p class="scrolly-p">
-      In the high elliptical orbit (HEO) exist roughly 200 objects. Diffent types of elliptical orbits exist, 
-      One example is the Molniya orbits, named after the Molniya Soviet communication satellites.
+      In the high elliptical orbit (HEO) are circa
+      <Annotation
+        bind:visible={visible}
+        color="yellow"
+        type="highlight"
+        multiline
+        animate={true}
+        iterations={2}>
+        <span class="dark-text">200 objects.</span>
+      </Annotation> Diffent types of elliptical orbits exist,
+      for example the
+      <Annotation
+        bind:visible={visible}
+        color="yellow"
+        type="highlight"
+        multiline
+        animate={true}
+        iterations={2}>
+        <span class="dark-text">Molniya orbit</span>
+      </Annotation>, named after the Molniya Soviet communication satellites.
     </p>
   </div>
 
@@ -173,7 +199,7 @@
       heo = true
   }}>
     <p class="scrolly-p">
-      All satellites in the earth orbit are in the range of (500km) to 2000km.
+      All 9000 satellites in their respective orbits.
     </p>
   </div>
 </div>
@@ -250,6 +276,7 @@
 
 .hero-text {
     width: 100%;
+    font-size: 1.5em;
 }
 
 .first-scroll-section {
@@ -279,8 +306,8 @@
     padding: 0.5em 0.6em;
     z-index: 10;
   }
-  .scrolly-span {
-    
+  .dark-text {
+    color: black;
   }
 
 </style>

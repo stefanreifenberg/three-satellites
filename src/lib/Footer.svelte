@@ -16,20 +16,25 @@
                 ready = true;
              }}>
             {#if ready}
-            <h1 in:fly="{{ y: 150, duration: 1600 }}">Methods</h1>
+            
             <div class="footer-text">
+                <h1 in:fly="{{ y: 150, duration: 1600 }}">Data & Attributions</h1>
                 <p in:fly="{{ y: 150, duration: 1600, delay:500 }}">
-                    this work is inspired by the <a class="kaldera-link" href="https://www.zeit.de/wissen/2022-10/weltraumschrott-satelliten-raumfahrt-gefahr-forschung">this</a> article from the german newspaper "Die Zeit" 
+                    This work is inspired by the <a class="kaldera-link" href="https://www.zeit.de/wissen/2022-10/weltraumschrott-satelliten-raumfahrt-gefahr-forschung" target="_blanck">this</a>
+                    article from the german newspaper "Die Zeit", visualizing space debris puplished on 7. Nov 2022.
+                </p>
+                <p in:fly="{{ y: 150, duration: 1600, delay:500 }}">
+                    The satellite data was downloaded from <a class="kaldera-link" href="https://www.space-track.org/">space-track.org</a>
                 </p>
                 <p in:fly="{{ y: 150, duration: 1600, delay:500  }}">
-                    This work is based on "Simple Satellite Low Poly Free" (https://sketchfab.com/3d-models/simple-satellite-low-poly-free-f23b484cda664f1cb91b4f62ea5ef8bf)
-                    by DjalalxJay (https://sketchfab.com/djalalxjay) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+                    The satellite model: <a class="kaldera-link" href="https://sketchfab.com/3d-models/simple-satellite-low-poly-free-f23b484cda664f1cb91b4f62ea5ef8bf">"Simple Satellite Low Poly Free"</a>
+                    by <a class="kaldera-link" href="https://sketchfab.com/djalalxjay/">DjalalxJay</a> licensed under CC-BY-4.0
                 </p>
                 <p in:fly="{{ y: 150, duration: 1600, delay:500 }}">
-                    follow me on twitter: <a href="https://twitter.com/reyfenberg">@reyfenberg</a>
+                    Follow me on twitter: <a class="kaldera-link" href="https://twitter.com/reyfenberg">@reyfenberg</a>
                 </p>
                 <p in:fly="{{ y: 150, duration: 1600, delay:500 }}">
-                    want to work with us? <a class="kaldera-link" href="https://kaldera.dev">kaldera.dev</a>
+                    Want to work with us? <a class="kaldera-link" href="https://kaldera.dev">kaldera.dev</a>
                 </p>
             </div>
             
@@ -39,31 +44,30 @@
             </div> 
             {/if}
         </section>
-       
     </div>
     
     <style lang="scss">
-    // .footer-text {
-    //     float: left;
-    // }
+
+    section {
+        width: 100%;
+        display:inline-block;
+        margin-left: 2em;
+    }
       .footer h1 {
-            margin-top: 0;
             font-weight: 200;
             font-size: 3rem;
-            // float: left;
             color: white;
             z-index:1;
-            @media only screen and (max-width: 768px)  {
-                font-size: 3rem;    
-            }
+        }
+
+        .footer-text {
+            font-size: 2rem;
         }
         
         .footer p {
             font-weight: 200;
-            font-family: 'Pangea', sans-serif;
             font-size: 1rem;
             line-height: 3em;
-            width: 80%;
             margin: 0 auto;
             color: white;
             @media only screen and (max-width: 768px)  {
@@ -72,7 +76,7 @@
         }
         .footer {
             color: white;
-            height: 100vh;
+            height: 70vh;
             position: relative;
             display: flex;
             place-items: start;

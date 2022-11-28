@@ -7,7 +7,7 @@
 
     useFrame(
         () => {
-            rotation += 0.0004;
+            rotation += 0.0003;
         }
     )
 
