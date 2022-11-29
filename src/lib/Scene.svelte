@@ -55,7 +55,7 @@
 
 <Environment
   path = './'
-  files='hdr.png'
+  files='hdr-min.png'
   isBackground={true}
 />
 
