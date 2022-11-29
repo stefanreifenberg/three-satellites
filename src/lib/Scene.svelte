@@ -1,5 +1,5 @@
 <script>
-  import { PerspectiveCamera,OrbitControls,DirectionalLight, useThrelte } from '@threlte/core';
+  import { PerspectiveCamera, OrbitControls, DirectionalLight } from '@threlte/core';
   import { Environment } from '@threlte/extras';
   import Earth from './Earth.svelte'
   import GeoSatellites from './GeoSatellites.svelte'
@@ -42,14 +42,6 @@
   $: showMeo = meo;
   $: showGeo = geo;
   $: showHeo = heo;
-
-
-
-  const { camera } = useThrelte()
-  const callback = () => {
-    console.log($camera.position)
-  }
-
 </script>
 
 <SatelliteModel />
@@ -83,8 +75,3 @@
 {#if showHeo}
   <HeoSatellites/>     
 {/if}
-
-
-<style lang="scss">
-
-</style>

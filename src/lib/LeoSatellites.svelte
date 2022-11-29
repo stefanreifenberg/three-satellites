@@ -19,7 +19,7 @@ let eartRotation = 1;
 
 useFrame(
     () => {
-      rotation += eartRotation * 0.001;
+      rotation += eartRotation * 0.0018;
     }
   )  
 

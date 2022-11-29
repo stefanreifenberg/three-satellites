@@ -244,10 +244,10 @@
 }
 
 .hero h1 {
-    font-weight: 200;
+    font-weight: 800;
     width: 100%;
     margin-top: 0;
-    font-size: 6rem;
+    font-size: 8em;
     color: white;
     z-index:1;
 }
@@ -266,6 +266,7 @@
 }
 
 .big-text {
+    font-family: 'West', sans-serif;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -273,8 +274,10 @@
 }
 
 .hero-text {
+    font-family: 'West', sans-serif;
     width: 100%;
-    font-size: 1.5em;
+    font-size: 2.5em;
+    font-weight: 400;
 }
 
 .first-scroll-section {
@@ -302,6 +305,7 @@
     margin-bottom: 90vh;
     width: 13em;
     padding: 0.5em 0.6em;
+    line-height: 1.5;
     z-index: 10;
   }
   .dark-text {

@@ -24,7 +24,7 @@
                     article from the german newspaper "Die Zeit", visualizing space debris puplished on 7. Nov 2022.
                 </p>
                 <p in:fly="{{ y: 150, duration: 1600, delay:500 }}">
-                    The satellite data was downloaded from <a class="kaldera-link" href="https://www.space-track.org/">space-track.org</a>
+                    The satellite data was downloaded from <a class="kaldera-link" href="https://www.space-track.org/">space-track.org</a>. The positioning of the satellites is based on random values and does not reflect the actual position of the satellites.
                 </p>
                 <p in:fly="{{ y: 150, duration: 1600, delay:500  }}">
                     The satellite model: <a class="kaldera-link" href="https://sketchfab.com/3d-models/simple-satellite-low-poly-free-f23b484cda664f1cb91b4f62ea5ef8bf">"Simple Satellite Low Poly Free"</a>
@@ -61,7 +61,7 @@
         }
 
         .footer-text {
-            font-size: 2rem;
+            font-size: 2em;
         }
         
         .footer p {
@@ -76,7 +76,7 @@
         }
         .footer {
             color: white;
-            height: 70vh;
+            height: 50vh;
             position: relative;
             display: flex;
             place-items: start;
@@ -115,7 +115,7 @@
         #button:active {
             background-color: #555;
         }
-        /* center the button div */
+
         .button-div {
             position: absolute;
             bottom: 0;
