@@ -30,6 +30,9 @@
                     The satellite model: <a class="kaldera-link" href="https://sketchfab.com/3d-models/simple-satellite-low-poly-free-f23b484cda664f1cb91b4f62ea5ef8bf">"Simple Satellite Low Poly Free"</a>
                     by <a class="kaldera-link" href="https://sketchfab.com/djalalxjay/">DjalalxJay</a> licensed under CC-BY-4.0
                 </p>
+                <p in:fly="{{ y: 150, duration: 1600, delay:500  }}">
+                    Made with <a class="kaldera-link" href="https://svelte.dev/">Svelte</a> using the <a class="kaldera-link" href="https://threlte.xyz/">Threlte</a> library.
+                </p>
                 <p in:fly="{{ y: 150, duration: 1600, delay:500 }}">
                     Follow me on twitter: <a class="kaldera-link" href="https://twitter.com/reyfenberg">@reyfenberg</a>
                 </p>
